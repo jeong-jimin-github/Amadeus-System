@@ -1,0 +1,159 @@
+<html>
+<style>
+    .button {
+        background-color: #465183;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Shippori Mincho B1', serif;
+    }
+
+    body {
+        background-image: url('2133460020.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    a:link { color: rgb(116, 159, 240); text-decoration: none;}
+    a:visited { color: rgb(116, 159, 240); text-decoration: none;}
+    a:hover { color: rgb(116, 159, 240); text-decoration: underline;}
+</style>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>
+        AMADEUS
+    </title>
+</head>
+
+<body>
+    <a href='amadeus.html'><img src="제목을-입력해주세요.-001 (2).png" width="300" /></a>
+    <center>
+        <br><br>
+        <img src="kurisu_normal1.png" width="200" /><br><br>
+        <div id="q" style="color:white; font-family: 'Shippori Mincho B1', serif;">質問 : </div><br>
+        <div id="a" style="color:white; font-family: 'Shippori Mincho B1', serif;">答え : </div>
+        <br><input type="button" class="button" value="話す" onclick="new Audio('back_style_3_003.wav').play();speak()" /><br>
+        <footer>
+          <br>
+          <a href='amadeus_kr.html' style="color:white; font-family: 'Nanum Myeongjo', serif;">한국어로도 이용하실 수 있습니다</a>
+          <br>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;">Copyright © 2021 <a href="mailto: jmjeong10@Gmail.com" title="Contact Progrm">Progrm</a> All rights reserved.</p>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://github.com/progrm-github/AMADEUS_JAVASCRIPT-2">Github Repository</a></p>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://discord.gg/SXBeYcVyuM">Amadeus Discord Server</a></p>
+      </footer>
+    </center>
+</body>
+<script src="annyang.js"></script>
+<script>
+    if (annyang) {
+        function speak() {
+            annyang.start({ autoRestart: false, continuous: false });
+            var recognition = annyang.getSpeechRecognizer();
+            var final_transcript = '';
+            recognition.interimResults = true;
+            recognition.onresult = function(event) {
+                var interim_transcript = '';
+                final_transcript = '';
+                for (var i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        final_transcript += event.results[i][0].transcript;
+                        console.log("final_transcript=" + final_transcript);
+                    } else {
+                        interim_transcript += event.results[i][0].transcript;
+                        console.log("interim_transcript=" + interim_transcript);
+                    }
+                }
+                var getTagId = document.getElementById("q");
+                document.getElementById("q").innerHTML = "質問 : " + final_transcript;
+                if (final_transcript == '') {
+                    return;
+                }
+                else {
+                  if (final_transcript == "クリスティーナ") {
+                    new Audio('christina.mp3').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : クリスティーナ?";
+                } else if (final_transcript == "誰") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "誰だ") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "お前は誰") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "お前は誰だ") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "君は誰") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "君は誰だ") {
+                    new Audio('hajimemashite.wav').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
+                } else if (final_transcript == "お願い") {
+                    new Audio('daga_kotowaru.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : だが断る。";
+                } else if (final_transcript == "こんにちは") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "おはよう") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "こんばんは") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "おはようございます") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "ハロー") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "Hello") {
+                    new Audio('hello.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : Hello";
+                } else if (final_transcript == "何ができる") {
+                    new Audio('ask_me_whatever.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : どんなことでも聞いてください、可能な範囲でお答えしますから。";
+                } else if (final_transcript == "タイムマシンは可能かどうか") {
+                    new Audio('tm_not_possible.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : そうですね、結論から言ってしまうとタイムマシンは可能ではない。";
+                } else {
+                    new Audio('sorry.ogg').play();
+                    var getTagId = document.getElementById("a");
+                    document.getElementById("a").innerHTML = "答え : データベースから答えを見けられません。<br>検索結果です。" + '<a href="http://www.google.com/search?q=' + final_transcript + '">' + final_transcript + '</a>';
+                    window.open('http://www.google.com/search?q=' + final_transcript, '_blank');  
+                }
+              }
+            };
+
+
+        }
+    }
+</script>
+
+</html>
