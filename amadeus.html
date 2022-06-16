@@ -33,7 +33,7 @@
         AMADEUS
     </title>
 </head>
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <body>
     <a href='amadeus.html'><img src="제목을-입력해주세요.-001 (2).png" width="300" /></a>
     <center>
@@ -46,12 +46,12 @@
           <br>
           <a href='amadeus_kr.html' style="color:white; font-family: 'Nanum Myeongjo', serif;">한국어로도 이용하실 수 있습니다</a>
           <br>
-          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;">Copyright © 2021 <a href="mailto: jmjeong10@Gmail.com" title="Contact Progrm">Progrm</a> All rights reserved.</p>
-          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://github.com/progrm-github/AMADEUS_JAVASCRIPT-2">Github Repository</a></p>
-          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://discord.gg/SXBeYcVyuM">Amadeus Discord Server</a></p>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;">Copyright © 2022 <a href="mailto: jmjeong10@Gmail.com" title="Contact">Jeong-Jimin</a> All rights reserved.</p>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://github.com/jeong-jimin-github/Amadeus-System">Github Repository</a></p>
+          <p style="color:white; font-size: small; font-family: 'Shippori Mincho B1', serif;"><a href="https://discord.gg/SXBeYcVyuM">Discord Server</a></p>
       </footer>
     </center>
-</body>
+</body>utterance
 <script src="annyang.js"></script>
 <script>
     if (annyang) {
@@ -78,77 +78,28 @@
                     return;
                 }
                 else {
-                  if (final_transcript == "クリスティーナ") {
-                    new Audio('christina.mp3').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : クリスティーナ?";
-                } else if (final_transcript == "誰") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "誰だ") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "お前は誰") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "お前は誰だ") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "君は誰") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "君は誰だ") {
-                    new Audio('hajimemashite.wav').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : 初めまして、牧瀬栗栖です。";
-                } else if (final_transcript == "お願い") {
-                    new Audio('daga_kotowaru.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : だが断る。";
-                } else if (final_transcript == "こんにちは") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "おはよう") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "こんばんは") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "おはようございます") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "ハロー") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "Hello") {
-                    new Audio('hello.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : Hello";
-                } else if (final_transcript == "何ができる") {
-                    new Audio('ask_me_whatever.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : どんなことでも聞いてください、可能な範囲でお答えしますから。";
-                } else if (final_transcript == "タイムマシンは可能かどうか") {
-                    new Audio('tm_not_possible.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : そうですね、結論から言ってしまうとタイムマシンは可能ではない。";
-                } else {
-                    new Audio('sorry.ogg').play();
-                    var getTagId = document.getElementById("a");
-                    document.getElementById("a").innerHTML = "答え : データベースから答えを見けられません。<br>検索結果です。" + '<a href="http://www.google.com/search?q=' + final_transcript + '">' + final_transcript + '</a>';
-                    window.open('http://www.google.com/search?q=' + final_transcript, '_blank');  
+                    var url = "https://www.chaplus.jp/v1/chat?apikey=62aacf0a3d1a9";
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", url);
+
+                    xhr.setRequestHeader("Content-Type", "application/json");
+
+                    xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        console.log(xhr.status);
+                        console.log(JSON.parse(xhr.responseText).bestResponse.utterance);
+                        new Audio("https://api.su-shiki.com/v2/voicevox/audio/?text=" + JSON.parse(xhr.responseText).bestResponse.utterance + "&key=Q8D520187801Z06&speaker=2").play();
+                        document.getElementById("a").innerHTML = "答え : " + JSON.parse(xhr.responseText).bestResponse.utterance;
+
+
+                    }};
+
+                    var data = '{"utterance":"' + final_transcript + '","username":"Okabe Rintarou","agentState":{"agentName":"Amadeus","tone":"normal", "age":"17歳"}}';
+
+                    xhr.send(data);
+
                 }
-              }
             };
 
 
