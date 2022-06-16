@@ -78,7 +78,7 @@
                     return;
                 }
                 else {
-                    var url = "https://cors.bridged.cc/https://www.chaplus.jp/v1/chat?apikey=62aacf0a3d1a9";
+                    var url = "https://www.chaplus.jp/v1/chat?apikey=62aacf0a3d1a9";
 
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", url);
@@ -89,7 +89,7 @@
                     if (xhr.readyState === 4) {
                         console.log(xhr.status);
                         console.log(JSON.parse(xhr.responseText).bestResponse.utterance);
-                        new Audio("https://cors.bridged.cc/https://api.su-shiki.com/v2/voicevox/audio/?text=" + JSON.parse(xhr.responseText).bestResponse.utterance + "&key=Q8D520187801Z06&speaker=2").play();
+                        new Audio("https://api.su-shiki.com/v2/voicevox/audio/?text=" + JSON.parse(xhr.responseText).bestResponse.utterance + "&key=Q8D520187801Z06&speaker=2").play();
                         document.getElementById("a").innerHTML = "答え : " + JSON.parse(xhr.responseText).bestResponse.utterance;
 
 
